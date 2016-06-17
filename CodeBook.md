@@ -2,7 +2,7 @@
 #### for Getting & Cleaning Data Course
 ###### by Richard Wheeler
 
-Analysis is performed by the R script called "run_analysis.R".  It writes out a file called "spresult.csv" which is the tidy data set of the smart phone measurment test and traning results. It also returns this result upon exiting the script.
+Analysis is performed by the R script called "run_analysis.R".  It writes out a file called "spresult.txt" which is the tidy data set of the smart phone measurment test and traning results. It also returns this result upon exiting the script.
 
 #### Script Details
 
@@ -24,7 +24,7 @@ The same steps are followed for the test data columns in "spmeanstd" data frame 
 
 Now we have the data (spdattrain, spdattest) ready for the combining as the column names all match into the final data frame variable called "spresult".  Last data manipulation is to order by "subject".
 
-Using "spresult" this is written to the file called "spresult.csv" and the function then returns ending the analysis and the script.
+Using "spresult" this is written to the file called "spresult.txt" and the function then returns ending the analysis and the script.
 
 The 82 Variables used in the "spresult" dataset performed by the run_analysis.R script:  
 

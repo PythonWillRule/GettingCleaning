@@ -60,7 +60,7 @@ runAnalysis <- function() {
     spresult <- spresult[with(spresult, order(subject)),]
 
     # Write result to file
-    write.csv(spresult, file="spresult.csv", row.names = FALSE)
+    write.table(spresult, file="spresult.txt", row.names = FALSE)
     
     return(spresult)
 }

@@ -124,7 +124,7 @@ $(document).ready(function () {
 <h4>for Getting &amp; Cleaning Data Course</h4>
 <div id="by-richard-wheeler" class="section level6">
 <h6>by Richard Wheeler</h6>
-<p>Analysis is performed by the R script called “run_analysis.R”. It writes out a file called “spresult.csv” which is the tidy data set of the smart phone measurment test and traning results. It also returns this result upon exiting the script.</p>
+<p>Analysis is performed by the R script called “run_analysis.R”. It writes out a file called “spresult.txt” which is the tidy data set of the smart phone measurment test and traning results. It also returns this result upon exiting the script.</p>
 </div>
 </div>
 <div id="script-details" class="section level4">
@@ -138,7 +138,7 @@ $(document).ready(function () {
 <p>Next step is to calculate the averages for the extracted measurements. Starting with the training data columns we use the aggregate command on the “spmeanstd” data frame. The na’s are omitted and this done by the columns “subject” and “activity_train” and placed in data frame variable “spdattrain”. Next we fix the column names for the by columns and then purge the “_train&quot; suffixes from the other column names. Finally a “datasource” column is added so that we can know which original data set this measurement came from.</p>
 <p>The same steps are followed for the test data columns in “spmeanstd” data frame and the result is stored in the “spdattest” data frame variable.</p>
 <p>Now we have the data (spdattrain, spdattest) ready for the combining as the column names all match into the final data frame variable called “spresult”. Last data manipulation is to order by “subject”.</p>
-<p>Using “spresult” this is written to the file called “spresult.csv” and the function then returns ending the analysis and the script.</p>
+<p>Using “spresult” this is written to the file called “spresult.txt” and the function then returns ending the analysis and the script.</p>
 <p>The 82 Variables used in the “spresult” dataset performed by the run_analysis.R script:</p>
 <ul>
 <li>subject - indentifier of the subject</li>
