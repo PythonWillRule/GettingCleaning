@@ -11,23 +11,27 @@ runAnalysis <- function() {
     
     # Load Test Data steps
     subjects <- read.table("UCI HAR Dataset/test/subject_test.txt", header = FALSE, col.names=c("subject"))
-
     activities <- read.table("UCI HAR Dataset/test/y_test.txt", header = FALSE, col.names=c("activity"))
-    activities <- merge(activities,actlabels, by="activity", all.x=TRUE)
-    
     testdata <- read.table("UCI HAR Dataset/test/X_test.txt", header = FALSE, col.names = features)
-    testdata <- cbind(subjects, activities$label, testdata)
-    setnames(testdata,"activities$label","activity")
-    
+   
+    # Match the activity to the activity label and fix the column name
+    activities <- as.data.frame(actlabels$label[match(activities$activity,actlabels$activity)])
+    colnames(activities) = "activity"
+
+    # bind it all together
+    testdata <- cbind(subjects, activities, testdata)
+
     # Load Train Data Steps
     subjects <- read.table("UCI HAR Dataset/train/subject_train.txt", header = FALSE, col.names=c("subject"))
-    
     activities <- read.table("UCI HAR Dataset/train/y_train.txt", header = FALSE, col.names=c("activity"))
-    activities <- merge(activities,actlabels, by="activity", all.x=TRUE)
-    
     traindata <- read.table("UCI HAR Dataset/train/X_train.txt", header = FALSE, col.names = features)
-    traindata <- cbind(subjects, activities$label, traindata)
-    setnames(traindata,"activities$label","activity")
+
+    # Match the activity to the activity label and fix the column name
+    activities <- as.data.frame(actlabels$label[match(activities$activity,actlabels$activity)])
+    colnames(activities) = "activity"
+    
+    # bind it all together
+    traindata <- cbind(subjects, activities, traindata)
     
     # Merge the train & test data
     spdata <- merge(traindata,testdata, by="subject", all = TRUE, suffixes=c("_train","_test"))

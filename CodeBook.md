@@ -10,7 +10,11 @@ The script first begins by reading the "features.txt" file to use as column head
 
 The script next reads the activity labels from the "activity_labels.txt" file into a variable called "actlabels".  
 
-Then script begins loading the "test" data beginning with reading the test subjects from "subject_test.txt" file into the "subjects" variable.  Next the test activities are read from the "y_test.txt" file into the "activities" variable.  The data frame "actlabels" is then merged with the "activities" data frame by the "activity" column into and replacing the "activities" variable.  Then the test measurements are read from the file "x_test.txt" into "testdata" variable using the "features" variable for the column names.  The script then adds two columns of "subjects"" and "activity label" from the "activities" data frame with the "testdata" data frame. Then the new column for activities is renamed to "activity".
+Then script begins loading the "test" data beginning with reading the test subjects from "subject_test.txt" file into the "subjects" variable.  Next the test activities are read from the "y_test.txt" file into the "activities" variable. Then the test measurements are read from the file "x_test.txt" into "testdata" variable using the "features" variable for the column names.  
+
+The data frame "activities" is then matched with the "actlabels" data frame by the "activity" column it retrieves the label and we generate new data frame of activites with label names. The column name is changed to "activity".
+
+Next combine the "subjects", "activities" and "testdata" data frames and storing that in "testdata" now a combined data frame.
 
 The same steps are repeated again for the training data and the files used are "subject_train.txt", "y_train.txt" and "x_train.txt".  The resulting data frame is the "traindata" variable.
  
